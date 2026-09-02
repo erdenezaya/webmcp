@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getModelContext, type WebMCPToolDefinition } from '../../webmcp/registerTool'
+import { OnboardingPanel } from '../common/OnboardingPanel'
 import { StatusPill } from '../common/StatusPill'
 import { ViewHeader } from '../common/ViewHeader'
 
@@ -33,15 +34,11 @@ export function ToolInspectorView({ toolDefs }: { toolDefs: WebMCPToolDefinition
 
   return (
     <section>
+      <OnboardingPanel />
       <ViewHeader
         title="Tool Inspector"
         subtitle={`${visibleTools.length} tools available via WebMCP${registeredNames ? '' : ' (local manifest — WebMCP not detected in this browser)'}`}
       />
-
-      <div className="mb-4 rounded border border-slate-800 bg-slate-900/30 p-3 text-xs text-slate-400">
-        These tools are exposed to AI agents via WebMCP. This panel lets you invoke them manually to see the same
-        behaviour.
-      </div>
 
       <div className="space-y-3">
         {visibleTools.map((tool) => (

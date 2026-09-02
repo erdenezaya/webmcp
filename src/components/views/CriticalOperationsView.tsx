@@ -1,4 +1,5 @@
 import { useRegister } from '../../context/RegisterContext'
+import { OnboardingPanel } from '../common/OnboardingPanel'
 import { StatusPill } from '../common/StatusPill'
 import { ViewHeader } from '../common/ViewHeader'
 import { toleranceLabel, toleranceTone } from '../../lib/status'
@@ -8,6 +9,7 @@ export function CriticalOperationsView() {
 
   return (
     <section>
+      <OnboardingPanel dismissible />
       <ViewHeader
         title="Critical Operations"
         subtitle="Tolerance monitoring against APRA CPS 230 disruption tolerances"
